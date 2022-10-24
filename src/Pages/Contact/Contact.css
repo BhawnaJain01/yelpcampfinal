@@ -1,0 +1,70 @@
+.contactimage{
+    width: 100%;
+    height: 30rem;
+    position: relative;
+}
+.contactform{
+    width:70rem;
+    height:36rem ;
+   
+    position: absolute;
+    background-color: #15293078;
+top:62% ;
+    left: 13%;
+}
+
+.headingC{
+    margin-top: 2rem;
+    color: #ffffff;
+}
+
+.inputBoxC{
+    background: #bcbcbc;
+    border: none;
+    margin-top: 15px;
+    width: 335px;
+    /* margin-left: -378px; */
+    margin-bottom: 6px;
+    outline: none;
+    margin-left: 20px;
+    /* color: black; */
+     font-size: 17px; 
+    font-weight: 350;
+    height: 38px;
+    margin-top: 0px;
+    /* margin-right: 307px; */ 
+}
+.inputcontact{
+    background:#bcbcbc;
+    border: none;
+    margin-top: 15px;
+    width: 280px;
+    
+    margin-bottom: 6px;
+    outline: none;
+    color: black;
+  
+    height: 40px;
+    margin-left: 77px;
+    display: flex;
+}
+.icons{
+    margin-top: 5px;
+    color: #074957;
+    margin-left: 5px;
+}
+
+.inputmessage{
+    background:#bcbcbc;
+    border: none;
+    margin-top: 15px;
+    width: 62rem;
+    
+    margin-bottom: 6px;
+    outline: none;
+    color: black;
+  
+    height: 15rem;
+    margin-left: 77px;
+    display: flex;
+}

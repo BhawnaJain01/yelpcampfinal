@@ -1,0 +1,27 @@
+.register-div{
+    width: 40vw;
+    height: 45vh;
+    /* border: 1px solid black; */
+}
+
+.register-main-div{
+    display: flex;
+    justify-content: center;
+    padding-top: 90px;
+    border: 1px solid black;
+    width: 60vw;
+    margin-top: 60px;
+    /* margin-left: 100px; */
+}
+
+.register-head{
+    font-size: 25px;
+    font-weight: 600;
+    /* text-align: left;
+    margin-left: 20px;
+    margin-top: 10px; */
+}
+.register-img{
+    width: 350px;
+    height: 450px;
+}

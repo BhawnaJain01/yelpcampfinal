@@ -1,0 +1,72 @@
+.main-profile{
+    width: 80vw;
+    height: auto;
+    border: 1px solid black;
+    margin-top: 40px;
+    margin-left: 140px;
+    padding: 20px;
+   
+}
+.profile-head{
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.profile-div1{
+    width: 70%;
+    height: 200px;
+    border: 1px solid black;
+    margin-left: 180px;
+    display: flex;
+}
+.profile-img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+.my-name{
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /* text-align: left; */
+}
+
+.cardsMainDiv1{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap ;
+    margin-top: 10px;
+    /* margin-left: 20px; */
+ }
+
+.cards1{
+    position: relative;
+    display: flex;
+    width: 700px;
+    height: 200px;
+    /* background-color: #3e8e41; */
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 2px 10px 2px lightgray;
+  }
+
+
+
+  .campName1{
+    margin-top : 10px;
+    margin-left: 10px;
+    font-size:20px ;
+    font-weight: 600;
+  }
+
+  .priceTag1{
+    background-color: #F1F8EA;
+    width: 210px;
+    border-radius: 10px;
+    height: 115px;  
+    margin-top: 60px;
+    margin-left: 40px;
+  }
