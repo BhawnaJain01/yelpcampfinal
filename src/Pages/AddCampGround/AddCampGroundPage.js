@@ -36,7 +36,7 @@ export default function AddCampGroundPage() {
     console.log("resp=>", resp);
     if (resp.status === 200) {
       // window.location.reload();
-      alert("product uploaded");
+      alert("Camp ground uploaded");
     } else {
       alert("error");
     }

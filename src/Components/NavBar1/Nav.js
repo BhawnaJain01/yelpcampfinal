@@ -40,7 +40,9 @@ export default function Nav() {
         {auth ? (
           <>
             <AiOutlineHeart size={25} className="homeicon" />
-            <p className="navContent">Wishlist</p>
+            <Link className="linkC" to="/wishlist">
+              <p className="navContent1">Wishlist</p>
+            </Link>
             <Tooltip title="Profile">
               <Link to="/profile">
                 <Avatar

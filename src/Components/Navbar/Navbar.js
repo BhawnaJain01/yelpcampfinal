@@ -36,7 +36,9 @@ export default function NavBar() {
         {auth ? (
           <>
             <AiOutlineHeart size={25} className="homeicon" />
-            <p className="navContent">Wishlist</p>
+            <Link className="linkC" to="/wishlist">
+              <p className="navContent">Wishlist</p>
+            </Link>
             <Tooltip title="Profile">
               <Link to="/profile">
                 <Avatar

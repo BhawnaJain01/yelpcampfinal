@@ -29,6 +29,39 @@ export default function Campgrounds() {
     }
   }, []);
 
+  const userId = localStorage.getItem("userId");
+
+  const addToWishlist = async (campId) => {
+    try {
+      const body = {
+        userId: userId,
+        campId: campId,
+      };
+
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      };
+
+      const resp = await fetch(
+        "http://localhost:3211/AddToWishlist",
+        requestOptions
+      );
+
+      if (resp.status === 200) {
+        alert("added to wishlist");
+      } else if (resp.status === 300) {
+        alert("already in wishlist");
+      } else {
+        alert("error");
+      }
+    } catch (error) {
+      alert("error");
+      console.log("error=>", error);
+    }
+  };
+
   return (
     <div>
       <Nav />
@@ -39,6 +72,7 @@ export default function Campgrounds() {
         <div style={{ display: "flex" }}>
           <div
             style={{
+              position: "relative",
               border: "2px solid black",
               height: "50px",
               background: "white",
@@ -46,22 +80,27 @@ export default function Campgrounds() {
               borderColor: "#022B3A",
               marginLeft: "-120px",
               marginRight: "79px",
+              width: "250px",
             }}
           >
             <AiOutlineSearch
               size={20}
-              style={{ marginTop: "15px", marginLeft: "18px" }}
+              style={{ left: "2%", top: "25%", position: "absolute" }}
             />
             <input
               type="text"
               className="searchInput"
               style={{
+                position: "absolute",
                 border: "none",
                 outline: "none",
                 height: "40px",
-                marginBottom: "10px",
+                marginBottom: "20px",
                 fontSize: "20px",
-                marginLeft: "20px",
+                width: "150px",
+                left: "20%",
+                // marginLeft: "20px",
+                // marginBottom: "100px",
                 // backgroundColor:"#f5cac35c"
               }}
               placeholder="Search Place"
@@ -96,7 +135,10 @@ export default function Campgrounds() {
           <div className="dropdown">
             <button className="dropbtn">
               {" "}
-              Rating <BiDownArrow />{" "}
+              Rating{" "}
+              <BiDownArrow
+                style={{ marginLeft: "10px", marginTop: "5px" }}
+              />{" "}
             </button>
             <div className="dropdown-content">
               <a href="#">⭐⭐⭐⭐⭐</a>
@@ -138,16 +180,18 @@ export default function Campgrounds() {
                     <div style={{ display: "flex" }}>
                       <p className="campName"> {d.name} </p>
                       <AiOutlineHeart
+                        onClick={() => addToWishlist(d._id)}
                         size={30}
                         style={{
                           marginTop: "10px",
                           left: "94%",
+                          cursor: "pointer",
 
                           position: "absolute",
                         }}
                       />
                     </div>
-                    <div style={{ marginLeft: "-100px", marginTop: "-15px" }}>
+                    <div style={{ position: "absolute", left: "34%" }}>
                       ⭐⭐⭐⭐⭐
                     </div>
                     <div
@@ -156,12 +200,14 @@ export default function Campgrounds() {
                         display: "flex",
                         margin: "10px",
                         borderRadius: "20px",
+                        marginBottom: "40px",
+                        marginTop: "50px",
                       }}
                     >
                       <GoLocation
                         size={20}
                         style={{
-                          marginTop: "18px",
+                          marginTop: "4px",
                           marginLeft: "20px",
                           marginRight: "10px",
                         }}
@@ -171,7 +217,13 @@ export default function Campgrounds() {
                     </div>
 
                     <div style={{}}>
-                      <p style={{ marginTop: "5px" }}>
+                      <p
+                        style={{
+                          marginTop: "5px",
+                          position: "absolute",
+                          left: "37%",
+                        }}
+                      >
                         <span
                           style={{
                             backgroundColor: "green",

@@ -9,6 +9,7 @@ import Contact from "./Pages/Contact/Contact";
 import Login from "./Pages/LoginPage/Login";
 import Register from "./Pages/Register/Register";
 import Profile from "./Pages/ProfilePage/Profile";
+import Wishlist from "./Pages/Wishlist/Wishlist";
 // import <Contact from "./Pages/Contact/Signup"
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       {/* <NavBar/> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />

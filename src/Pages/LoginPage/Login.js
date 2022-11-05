@@ -30,10 +30,13 @@ export default function Login() {
 
       resp.json().then((data) => {
         if (resp.status === 200) {
-          alert("Login Successful");
+          // alert("Login Successful");
           localStorage.setItem("Auth", true);
           console.log("resp=>", data.pass);
           localStorage.setItem("userId", data.pass._id);
+          localStorage.setItem("contact", data.pass.contactNo);
+          localStorage.setItem("email", data.pass.email);
+          localStorage.setItem("name", data.pass.name);
           navigate("/");
         } else {
           alert("error");
@@ -56,6 +59,7 @@ export default function Login() {
               height: "7px",
               backgroundColor: "#FFCDD2",
               border: "none",
+              margin: "auto",
             }}
           />
 
@@ -80,7 +84,11 @@ export default function Login() {
 
           <p className="not-register">Not registered yet .. ? Register Here</p>
 
-          <Button onClick={() => loginSubmit()} variant="contained">
+          <Button
+            style={{ marginTop: "20px" }}
+            onClick={() => loginSubmit()}
+            variant="contained"
+          >
             Login
           </Button>
         </div>

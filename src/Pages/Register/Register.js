@@ -9,10 +9,11 @@ export default function Register() {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+
   const [phone, setPhone] = useState();
 
   const body = {
-    name: name,
+    Name: name,
     Email: email,
     contactNo: parseInt(phone),
     password: password,
@@ -33,10 +34,6 @@ export default function Register() {
       );
       if (resp.status === 200) {
         alert("Successfully Registered");
-        setName();
-        setEmail();
-        setPhone();
-        setPassword();
       } else {
         alert("error");
       }
@@ -62,6 +59,7 @@ export default function Register() {
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
+
             <TextField
               style={{ margin: "10px" }}
               id="outlined-basic"

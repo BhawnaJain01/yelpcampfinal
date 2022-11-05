@@ -6,16 +6,33 @@ import ImageModal from "../../Components/ImageModal";
 import { MdOutlineDeleteOutline, MdModeEditOutline } from "react-icons/md";
 import { GoLocation } from "react-icons/go";
 import React, { useState, useEffect } from "react";
+import { AiOutlineLogin } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
+import EditModal from "../../Components/EditModal";
+import DeletePopUp from "../../Components/DeletePopUp";
 
 export default function Profile() {
+  const navigate = useNavigate();
+
   const [data, setData] = useState();
+
+  const id = localStorage.getItem("userId");
+  const contact = localStorage.getItem("contact");
+  const email = localStorage.getItem("email");
+  const name = localStorage.getItem("name");
+
+  const logout = () => {
+    localStorage.clear();
+    navigate("/");
+  };
 
   useEffect(() => {
     try {
-      fetch("http://localhost:3211/getCampGrounds")
+      fetch(`http://localhost:3211/getMyCampGrounds/${id}`)
         .then((resp) => resp.json())
         .then((resp) => {
           console.log(resp.data);
+          console.log("id=>", id);
           setData(resp.data);
         });
     } catch (error) {
@@ -28,19 +45,22 @@ export default function Profile() {
       <div className="main-profile">
         {" "}
         <p className="profile-head">Profile</p>{" "}
+        <div className="signout-btn" onClick={() => logout()}>
+          <p className="signout-text">
+            Sign Out <AiOutlineLogin size={18} />{" "}
+          </p>
+        </div>
         <div className="profile-div1">
           <img className="profile-img" src={profileImg} alt="" />
           <div style={{ marginLeft: "40px", marginTop: "20px" }}>
-            <p className="my-name">Sahil Rohera</p>
+            <p className="my-name"> {name}</p>
             <p
               style={{
                 // textAlign: "left",
                 marginTop: "10px",
                 marginBottom: "5px",
               }}
-            >
-              Abc address
-            </p>
+            ></p>
 
             <div
               style={{
@@ -58,16 +78,16 @@ export default function Profile() {
                   marginBottom: "5px",
                 }}
               >
-                1 Camp grounds Added
+                2 Camp grounds Added
               </p>
             </div>
           </div>
           <div style={{ marginLeft: "130px", marginTop: "30px" }}>
-            <p>Email : sahilrohera10@gmail.com</p>
-            <p>Contact No. : 7428727172</p>
+            <p>Email : {email}</p>
+            <p>Contact No. : {contact}</p>
           </div>
         </div>
-        <p style={{ fontSize: "25px", fontWeight: "500" }}>
+        <p style={{ fontSize: "25px", fontWeight: "500", marginTop: "100px" }}>
           Added Camp Grounds
         </p>
         <div className="cardsMainDiv1">
@@ -81,26 +101,11 @@ export default function Profile() {
                   <div>
                     <div style={{ display: "flex" }}>
                       <p className="campName1"> {d.name} </p>
-                      <MdModeEditOutline
-                        size={30}
-                        style={{
-                          marginTop: "10px",
-                          left: "85%",
+                      <EditModal data={d} />
 
-                          position: "absolute",
-                        }}
-                      />
-                      <MdOutlineDeleteOutline
-                        size={30}
-                        style={{
-                          marginTop: "10px",
-                          left: "94%",
-
-                          position: "absolute",
-                        }}
-                      />
+                      <DeletePopUp id={d._id} />
                     </div>
-                    <div style={{ marginLeft: "-100px", marginTop: "-15px" }}>
+                    <div style={{ marginLeft: "5px", position: "absolute" }}>
                       ⭐⭐⭐⭐⭐
                     </div>
                     <div
@@ -109,12 +114,13 @@ export default function Profile() {
                         display: "flex",
                         margin: "10px",
                         borderRadius: "20px",
+                        marginTop: "20px",
                       }}
                     >
                       <GoLocation
                         size={20}
                         style={{
-                          marginTop: "18px",
+                          marginTop: "8px",
                           marginLeft: "5px",
                           marginRight: "10px",
                         }}
@@ -123,7 +129,7 @@ export default function Profile() {
                       <p> {d.location} </p>
                     </div>
 
-                    <div style={{}}>
+                    <div style={{ marginTop: "30px" }}>
                       <p style={{ marginTop: "5px" }}>
                         <span
                           style={{

@@ -57,11 +57,11 @@
   }
   
   .inputDiv{
-    margin-top: 40px;
+    margin-top: 35px;
     margin-bottom: 20px;
     justify-content: space-evenly;
     display: flex;
-    height: 50px;
+    height: 60px;
     width: 529px;
     border: 3.0999999999999996px solid rgba(7, 7, 7, 0.82);
     border-radius: 10px;

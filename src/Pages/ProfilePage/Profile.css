@@ -1,10 +1,12 @@
 .main-profile{
     width: 80vw;
     height: auto;
-    border: 1px solid black;
+    border: 5px solid #FFCDD2;
     margin-top: 40px;
     margin-left: 140px;
     padding: 20px;
+    position: relative;
+    margin-bottom: 40px;
    
 }
 .profile-head{
@@ -16,6 +18,8 @@
     width: 70%;
     height: 200px;
     border: 1px solid black;
+    border-radius: 20px ;
+    box-shadow: 0px 5px 10px 5px lightgray;
     margin-left: 180px;
     display: flex;
 }
@@ -38,15 +42,15 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap ;
-    margin-top: 10px;
-    /* margin-left: 20px; */
+  
  }
 
 .cards1{
     position: relative;
+    margin-bottom: 30px;
     display: flex;
     width: 700px;
-    height: 200px;
+    height: auto;
     /* background-color: #3e8e41; */
     border: 2px solid black;
     border-radius: 10px;
@@ -69,4 +73,20 @@
     height: 115px;  
     margin-top: 60px;
     margin-left: 40px;
+  }
+
+  .signout-btn{
+    position:absolute;
+    padding: 5px;
+    right: 2%;
+    top: 1%;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+
+  }
+  .signout-text{
+    font-size: 20px;
+    margin-top: 1px;
+    margin-bottom: 1px ;
   }

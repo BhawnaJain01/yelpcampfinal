@@ -1,7 +1,7 @@
 .searchbar{
     
         /* width: 87%; */
-        height: 5rem;
+        height: 8rem;
         background-color: #f5cac35c;
         display: flex;
         padding-left: 300px;
@@ -17,6 +17,8 @@
 }
 
 .dropbtn {
+  display: flex;
+  width: 110px;
         background-color: #022B3A;
         color: whitesmoke;
         padding: 15px;
@@ -78,10 +80,11 @@
          margin-left: 20px;
       }
       .cards{
+        margin-bottom: 20px;
         position: relative;
         display: flex;
         width: 800px;
-        height: 200px;
+        height: auto;
         /* background-color: #3e8e41; */
         border: 2px solid black;
         border-radius: 10px;
@@ -114,8 +117,11 @@
         width: 210px;
         border-radius: 10px;
         height: 115px;  
-        margin-top: 60px;
-        margin-left: 40px;
+        /* margin-top: 60px;
+        margin-left: 40px; */
+        position: absolute;
+        right: 1%;
+        top: 28%;
       }
 
       .hoverWala:hover{
