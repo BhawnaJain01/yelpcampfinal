@@ -1,7 +1,6 @@
 import React from "react";
 import Tooltip from "@mui/material/Tooltip";
 
-// import MainPage from ""
 import homepage from "../../Assets/homepage.jpg";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
